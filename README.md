@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-ruby 2.4.2p198
+ruby 2.4.2p198 \n
 Rails 5.1.4
 
 * System dependencies
