@@ -10,7 +10,7 @@ ruby 2.4.2p198
 Rails 5.1.4
 
 * System dependencies
-
+Bootstrap theme static
 * Configuration
 
 * Database creation
