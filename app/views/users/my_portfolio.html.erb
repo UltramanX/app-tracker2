@@ -2,7 +2,7 @@
 
 <h3>Financial Stocks Quotes</h3>
 <div id="stock-lookup">
-	<%= form_tag "#", method: :get, id: "stock-lookup-form" do %>
+	<%= form_tag search_stocks_path, remote: true, method: :get, id: "stock-lookup-form" do %>
 	  <div class="form-group row no-padding text-center col-md-12">
 	  	<div class="col-md-10">
 	  		<%= text_field_tag :stock, params[:stock], placeholder: "search for a stock", autofocus: true,
@@ -15,6 +15,11 @@
 	  		<% end %>
 	  	</div>
 	  </div>
+	  <% end %>
+</div>
 
-	<% end %>
+<!-- partials view -->
+
+<div id="search-results">
+<%= render 'schresult' %>
 </div>
