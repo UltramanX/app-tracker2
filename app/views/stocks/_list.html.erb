@@ -1,0 +1,37 @@
+<!-- display the list of stocks -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Change</th>
+      <th>Ptg. Change</th>
+      <th>Volume</th>
+      <th>Market Value</th>
+      <% if @user.id == current_user.id %>
+        <th>Actions</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_stocks.each do |user_stock| %>
+      <tr>
+        <td><%= user_stock.name %></td>
+        <td><%= user_stock.ticker %></td>
+        <td><%= user_stock.last_price %></td>
+        <td><%= user_stock.change %></td>
+        <td><%= user_stock.percentage_change %></td>
+        <td><%= user_stock.volume %></td>
+        <td><%= user_stock.market_volume %></td>
+        <% if @user.id == current_user.id %>
+          <td><%= link_to "Destroy stock", user_stock_path(user_stock), 
+                      method: :delete,
+                      data: {confirm: "Confirm, y/n?"}, 
+                      class: "btn btn-xs btn-danger" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
